@@ -9,6 +9,7 @@ export class ProductListComponent {
     imageWidth = 50;
     imagePadding = 2;
     imageIsShown = false;
+    filterBy = 'cart';
     products = [{
         productId: 1,
         productName: 'Leaf Rake',
