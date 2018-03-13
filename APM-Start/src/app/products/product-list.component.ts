@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
     pageTitle = 'my Product List';
+    imageWidth = 50;
+    imagePadding = 2;
+    imageIsShown = false;
     products = [{
         productId: 1,
         productName: 'Leaf Rake',
@@ -26,4 +29,8 @@ export class ProductListComponent {
         starRating: 4.2,
         imageUrl: 'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
     }];
+
+    toggleImage(): void {
+        this.imageIsShown = !this.imageIsShown;
+    }
 }
