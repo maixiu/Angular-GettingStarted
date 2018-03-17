@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProductService } from './products/product.service';
 
 @Component({
 	selector: 'pm-root',
@@ -10,15 +9,14 @@ import { ProductService } from './products/product.service';
 					<a class='navbar-brand'>{{ pageTitle }}</a>
 					<ul class='nav navbar-nav'>
 						<li><a [routerLink]="['/welcome']">Home</a></li>
-						<li><a [routerLink]="['/products']">Product List</a></li>
+						<li><a [routerLink]="['/product']">Product List</a></li>
 					</ul>
 				</div>
 				<div class='container'>
 					<router-outlet></router-outlet>
 				</div>
 			</nav>
-		</div>`,
-	providers: [ProductService]
+		</div>`
 })
 export class AppComponent {
 	pageTitle = 'Acme Product Management';

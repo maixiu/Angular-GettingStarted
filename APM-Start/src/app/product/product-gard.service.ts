@@ -9,7 +9,7 @@ export class ProductGardService implements CanActivate {
 		const id = +route.params['id'];
 		if (isNaN(id) || id <= 0) {
 			alert('wrong route');
-			this._router.navigate(['/products']);
+			this._router.navigate(['/product']);
 			return false;
 		}
 

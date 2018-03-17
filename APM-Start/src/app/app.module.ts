@@ -4,36 +4,24 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { ProductModule } from './product/product.module';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './products/product-list.component';
-import { ToSpacesPipe } from './shared/toSpaces.pipe';
-import { StarComponent } from './shared/star.component';
-import { ProducDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
-import { ProductGardService } from './products/product-gard.service';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		ProductListComponent,
-		StarComponent,
-		ToSpacesPipe,
-		ProducDetailComponent,
 		WelcomeComponent
 	],
 	imports: [
 		BrowserModule,
-		FormsModule,
-		HttpClientModule,
 		RouterModule.forRoot([
-			{ path: 'products', component: ProductListComponent },
-			{ path: 'product/:id', canActivate: [ProductGardService], component: ProducDetailComponent },
 			{ path: 'welcome', component: WelcomeComponent },
 			{ path: '', redirectTo: 'welcome', pathMatch: 'full' },
 			{ path: '**', redirectTo: 'welcome', pathMatch: 'full' }
-		])
+		]),
+		ProductModule
 	],
-	providers: [ProductGardService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
